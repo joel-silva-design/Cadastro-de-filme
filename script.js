@@ -1,0 +1,1 @@
+const cadastrarFilme = document.querySelector(".cadastrar-filme");

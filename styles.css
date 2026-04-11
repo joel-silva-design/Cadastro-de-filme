@@ -1,0 +1,60 @@
+.cadastrar-filme {
+    width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: rgb(50, 53, 56);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: sans-serif;
+}
+
+h2 {
+    text-align: center;
+    color: blue;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    font-weight: bold;
+    background: repeating-linear-gradient(
+        -45deg,
+        white,
+        white 25px,
+        black 25px,
+        black 35px
+    );
+}
+
+.campo {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.campo-assistiu {
+    margin-bottom: 20px;
+}
+
+label{
+    margin-bottom: 5px;
+    color: white;
+}
+
+.cadastrar-filme input {
+    padding: 7px;
+    border: 2px solid white;
+    background-color:  rgb(50, 53, 56);
+    font-size: 16px;
+}
+
+::placeholder{
+    color: white;
+    opacity: 0.8;
+}
+
+.btn-cadastrar{
+    width: 100%;
+    padding: 12px;
+}
+
+#imagem-do-filme{
+    display: none;
+}
