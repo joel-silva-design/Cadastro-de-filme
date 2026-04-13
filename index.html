@@ -4,66 +4,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
-    <title>Meus Filmes</title>
+    <title>Meus Filmes Favoritos</title>
 </head>
 <body>
-    <form class="cadastrar-filme" novalidate>
+    <header class="cabecalho">
+        <h1>Lista de Filmes Favoritos</h1>
+    </header>
 
-        <h2>Cadastre um Filme </h2>
+    <main class="container">
+        <section class="card">
+            <form class="cadastrar-filme" novalidate>
 
-        <div class="campo">
-        <label for="nome-filme">Filme</label>
-        <input type="text" name="nome-filme" id="nome-filme" placeholder="Digite o nome do Filme..." required>
-        <small class="erro" id="erro-nome"></small>
-        </div>
+                <h2>Cadastre um Filme </h2>
 
-        <div class="campo">
-            <label for="imagem-do-filme">Imagem do Filme/Selecione uma Imagem</label>
-            <input type="file" accept="image/*"  name="imagem-do-filme" id="imagem-do-filme" required>
-            <small class="erro" id="erro-imagem"></small>
-        </div>
+                <div class="campo">
+                <label for="nome-filme">Filme</label>
+                <input type="text" name="nome-filme" id="nome-filme" placeholder="Digite o nome do Filme..." required>
+                </div>
 
-        <div class="campo ">
-            <label for="genero-filme">Gênero do Filme</label>
-            <input type="text" name="genero-filme" id="genero-filme" placeholder="Digite o Gênero do Filme" required>
-            <small class="erro" id="erro-genero"></small>
-        </div>
+                <div class="campo">
+                    <label id="nome-imagem" for="imagem-do-filme">Selecione o Pôster do Filme</label>
+                    <input type="file" accept="image/*"  name="imagem-do-filme" id="imagem-do-filme" required>
+                </div>
 
-        <div class="campo">
-            <label for="nota-filme">Digite a nota do Filme</label>
-            <input type="number" name="nota-filme" id="nota-filme" min="0" max="10" step="0.1" placeholder="De 0 á 10" required>
-        </div>
-        
-        <div class="campo-assistiu">
-            <small>
-            <input type="checkbox" name="assistiu" id="assistiu">
-            <label for="assistiu">Já Assistiu?</label>
-            </small>
-        </div>
+                <div class="campo">
+                    <label for="genero">Genero</label>
+                    <select id="genero">
+                        <option value="">Selecione um gênero</option>
+                        <option value="Ação">Ação</option>
+                        <option value="Aventura">Aventura</option>
+                        <option value="Comédia">Comédia</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Ficção Científica">Ficção Científica</option>
+                        <option value="Terror">Terror</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Animação">Animação</option>
+                    </select>
+                </div>
 
-        <button type="submit" class="btn-cadastrar">Cadastrar Filme</button>
-    </form>
+                <div class="campo">
+                    <label for="nota-filme">Digite a nota do Filme</label>
+                    <input type="number" name="nota-filme" id="nota-filme" min="0" max="10" step="0.1" placeholder="De 0 a 10" required>
+                </div>
+                
+                <div class="campo-assistiu">
+                    <small>
+                    <input type="checkbox" name="assistiu" id="assistiu">
+                    <label for="assistiu">Já Assistiu?</label>
+                    </small>
+                </div>
 
-    <div class="todos-os-filmes">
+                <button type="submit" class="btn-cadastrar">Adicionar Filme</button>
+                <p id="mensagem" class="mensagem"></p>
+            </form>
+        </section>
 
-        <div class="campo-busca">
-        <label for="buscar-filme">🔎</label>
-        <input type="search" name="buscar-filme" id="buscar-filme">
-        <small class="erro" id="erro-busca"></small>
-        </div>
+        <section class="card">
+            
+            <div class="filtros">
+                <h2 id="busca-h2">Buscar e Filtrar</h2>
+                <div class="campo">
+                    <label for="busca">Buscar por Nome</label>
+                    <input type="search" name="busca" id="busca">
+                </div>
+                <div class="campo">
+                    <img src="" alt="">
+                    <label for="filtroGenero">Filtrar por gênero</label>
+                   <select id="filtroGenero">
+                        <option value="Todos">Todos</option>
+                        <option value="Ação">Ação</option>
+                        <option value="Aventura">Aventura</option>
+                        <option value="Comédia">Comédia</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Ficção Científica">Ficção Científica</option>
+                        <option value="Terror">Terror</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Animação">Animação</option>
+                    </select>
+                </div>
+            </div>
+        </section>
 
-        <div class="campo-busca">
-            <select name="busca-por-genero" id="busca-por-genero">
-                <option value="">Selecione o Gênero...</option>
-            </select>
-        </div>
+        <section class="card">
+            <h2 id="stat-h2">Estatísticas</h2>
 
-        <button type="submit" id="btn-busca">Burcar Filme</button>
+            <div class="estatisticas">
+                <div class="stat-box">
+                    <h3 id="totalFilmes">0</h3>
+                    <p>Total de filmes</p>
+                </div>
 
-        
-        <ul class="lista-de-filme"></ul>
+                <div class="stat-box">
+                    <h3 id="totalAssistidos">0</h3>
+                    <p>Já assistidos</p>
+                </div>
 
-    </div>
+                <div class="stat-box">
+                    <h3 id="mediaNotas">0.0</h3>
+                    <p>Média das notas</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Lista de Filmes</h2>
+            <div id="listaFilmes" class="lista-filmes"></div>
+        </section>
+
+    </main>
+  <script src="./script.js"></script>
 </body>
-<script src="./script.js"></script>
 </html>
