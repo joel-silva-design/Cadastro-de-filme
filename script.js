@@ -46,6 +46,8 @@ function validarFormulario(nome, genero, imagem, nota) {
 
 function limparFormulario(){
     cadastrarFilme.reset();
+    mensagemImagem.classList.remove("selecionada");
+    mensagemImagem.innerHTML = "Selecione o Pôster do Filme";
 }
 
 function criarFilme(nome, genero, imagem, nota, assistido){
@@ -129,7 +131,7 @@ function renderizarFilmes() {
         filmeCard.classList.add("filme-card");
 
         filmeCard.innerHTML =`
-        <img src="${filme.imagem}" width = "70" height = "90">
+        <img class="poster-mini" src="${filme.imagem}">
         <h3>${filme.nome}</h3>
         <p class="filme-info"><strong>Gênero:</strong>${filme.genero}</p>
         <p class="filme-info"><strong>Nota:</strong>${filme.nota.toFixed(1)}</p>

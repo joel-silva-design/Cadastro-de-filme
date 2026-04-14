@@ -16,6 +16,37 @@ header{
     text-align: center;
     font-weight: bold;
     letter-spacing: 2px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#svg-cabecalho {
+    background-color: #ffffff;
+    mask-image: url(./svg/ferramenta-de-cinema-de-carretel-de-filme.png);
+    -webkit-mask-image: url(./svg/ferramenta-de-cinema-de-carretel-de-filme.png);
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-size: contain;
+    -webkit-mask-size: contain;
+    width: 30px;
+}
+
+header h1 {
+    transition: color 0.4s linear;
+}
+
+header h1:hover {
+    color: #F1C40F;
+    
+}
+
+header #svg-cabecalho {
+    transition: color 0.4s linear;
+}
+
+header #svg-cabecalho:hover {
+    background-color: #F1C40F;
 }
 
 .cadastrar-filme {
@@ -32,6 +63,7 @@ header{
     border-radius: 8px;
     border: 10px solid #333333;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
 .cadastrar-filme h2 {
@@ -48,6 +80,16 @@ header{
     margin-top: 10px;
     margin-bottom: 40px;
     font-weight: bold;
+    /* overflow: hidden; */
+    position: relative;
+    z-index: 0;
+}
+
+.cadastrar-filme h2::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0; left: 0; width: 100%; height: 100%;
     background: repeating-linear-gradient(
         135deg,
         white,
@@ -55,7 +97,26 @@ header{
         black 25px,
         black 35px
     );
+
 }
+
+/* .cadastrar-filme h2::before:hover{
+    animation: claquete-se-move 2s linear;
+}
+
+@keyframes claquete-se-move {
+    0%{
+        background: repeating-linear-gradient();
+    }
+
+    50%{
+       background: repeating-linear-gradient( );
+    }
+
+    100%{
+        background: repeating-linear-gradient()
+    }
+} */
 
 .campo {
     margin-bottom: 20px;
@@ -246,7 +307,8 @@ header{
 
 .lista-filmes {
     display: grid;
-    gap: 16px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
 
 .filme-card {
@@ -254,7 +316,10 @@ header{
     border-left: 6px solid #2563eb;
     border-radius: 10px;
     padding: 16px;
-    background: #121212
+    background: #121212;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .filme-card h3 {
@@ -309,4 +374,15 @@ header{
     color: #6b7280;
     padding: 20px;
     font-size: italic;
+}
+
+#lista-filme-h2 {
+    display: flex;
+    justify-content: center;
+}
+
+.poster-mini {
+    object-fit: cover;
+    width: 259px;
+    height: 384px;
 }
